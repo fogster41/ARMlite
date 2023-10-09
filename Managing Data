@@ -1,0 +1,6 @@
+//Managing Data
+      MOV R3, #3        //Place value 3 into R3
+      MOV R4, R3        //Move value of R3 into R4
+      LDR R0, 20       //Load value of memory address 16 to R0
+      STR R0, 24
+      HLT
