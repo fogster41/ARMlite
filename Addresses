@@ -1,0 +1,8 @@
+//Immediate Addressing
+      MOV R1, #5
+//Register Addressing
+      MOV R0, R1
+//Direct Memory Addressing
+      LDR R2, 20        //0x00014
+      LDR R3, 32        //0x0002
+      HLT
