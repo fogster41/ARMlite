@@ -1,0 +1,15 @@
+      MOV R1, #0x0A
+      CMP R1, #11
+//BNE - Branch Not Equal
+//Branch if 2 values are not equal
+      BNE else
+      MOV R3, #20
+else:
+      MOV R2, #6
+      HLT
+//BEQ - Branch if EQual
+//Branch if 2 values are equal
+//BGT
+//Branch if greater than
+//BLT
+//Branch if less than

@@ -1,0 +1,7 @@
+//loop
+      MOV R0, #0
+loop:
+      ADD R0, R0, #1
+      CMP R0, #14
+      BNE loop
+      HLT

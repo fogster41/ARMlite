@@ -1,0 +1,13 @@
+//Bitwise Operators
+//AND
+      MOV R1, #3
+      AND R0, R1, #2
+//OR
+      MOV R4, #3
+      OR R3, R1, #2
+//XOR
+      MOV R7, #3
+      XOR R6, R1, #2
+//NOT (MVN)
+      MVN R12, #7
+      HLT

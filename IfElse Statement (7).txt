@@ -1,0 +1,11 @@
+//if else statement
+      MOV R1, #10
+      CMP R1, #11
+      BEQ if
+      MOV R3, #20
+      B else 
+if:
+      MOV R3, #30
+else:
+      HLT
+      1

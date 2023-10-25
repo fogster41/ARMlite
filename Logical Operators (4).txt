@@ -1,0 +1,9 @@
+//Logical Operators-Multiple&Divide
+      MOV R2, #6
+      LSL R1, R2, #2    //Multiplication
+//#1 is x/2, #2 is x/4, #3 is x/8 etc
+      MOV R3, #18
+      LSR R4, R3, #1    //Division
+      LSR R5, R4, #1
+//Rounds to nearest number (bitwise operaters)
+      HLT

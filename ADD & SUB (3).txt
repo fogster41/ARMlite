@@ -1,0 +1,12 @@
+//ADD
+      MOV R0, #-5
+      MOV R1, #6
+      ADDS R2, R1, R0
+//SUB
+      MOV R4, #4
+      MOV R5, #7
+      SUB R7, R5, R4
+      SUBS R8, R4, R5
+      HLT
+//SUBS does SUB but stores in status bits
+//ADDS does same
