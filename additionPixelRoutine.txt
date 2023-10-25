@@ -1,0 +1,27 @@
+      MOV R8, #5
+drawPic:
+      CMP R8, #1
+      BLT endDraw
+      MOV R0, #.black
+      STR R0, .Pixel333 //top left
+      STR R0, .Pixel300
+      STR R0, .Pixel267
+      CMP R8, #2
+      BLT endDraw
+      STR R0, .Pixel335 //top right
+      STR R0, .Pixel304
+      STR R0, .Pixel273
+      CMP R8, #5
+      BLT endDraw
+      STR R0, .Pixel397 //bottom left
+      STR R0, .Pixel428
+      STR R0, .Pixel459
+      CMP R8, #4
+      BLT endDraw
+      STR R0, .Pixel399 //bottom right
+      STR R0, .Pixel432
+      STR R0, .Pixel465
+      CMP R8, #5
+      BLT endDraw
+      STR R0, .Pixel366 //middle
+endDraw:

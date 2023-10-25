@@ -1,0 +1,32 @@
+      MOV R12, #MSG
+      STR r12, .WriteString 
+      LDR R0, .InputNum
+      MOV R12, #input1
+      STR R12, .WriteString
+      STR R0, .WriteUnsignedNum
+      LDR R1, .InputNum
+      MOV R12, #input2
+      STR R12, .WriteString
+      STR R1, .WriteUnsignedNum
+      ADD r2, r0, r1
+//STR R2, .WriteSignedNum
+result:
+      MOV R12, #resultMsg
+      STR R12, .WriteString
+      LDR R3, .InputNum
+      MOV R12, #input3
+      STR R12, .WriteString
+      STR R3, .WriteUnsignedNum
+      CMP R2, R3
+      BEQ complete
+      BNE result
+complete:
+      MOV R12, #finish
+      STR R12, .WriteString
+      HALT
+MSG:  .ASCIZ "Please input a number \n" 
+resultMsg: .ASCIZ "\nWhatis the result of the 2 integers inputted?"
+input1: .ASCIZ "You have entered value"
+input2: .ASCIZ "\nYou have entered value"
+input3: .ASCIZ "\nYou have entered value"
+finish: .ASCIZ "\nWell done!"

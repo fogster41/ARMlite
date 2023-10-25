@@ -1,0 +1,66 @@
+      MOV R12, #MSG
+      STR r12, .WriteString 
+      LDR R0, .InputNum
+      MOV R12, #input1
+      STR R12, .WriteString
+      STR R0, .WriteUnsignedNum
+      LDR R1, .InputNum
+      MOV R12, #input2
+      STR R12, .WriteString
+      STR R1, .WriteUnsignedNum
+      ADD r2, r0, r1
+//STR R2, .WriteSignedNum
+result:
+      MOV R12, #resultMsg
+      STR R12, .WriteString
+      LDR R3, .InputNum
+      MOV R12, #input3
+      STR R12, .WriteString
+      STR R3, .WriteUnsignedNum
+      CMP R2, R3
+      BEQ win
+      BNE validate
+validate:
+      ADD r8, r8, #1
+      B drawPic
+drawPic:
+      CMP R8, #1
+      BLT result
+      MOV R0, #.black
+      STR R0, .Pixel333 //top left
+      STR R0, .Pixel300
+      STR R0, .Pixel267
+      CMP R8, #2
+      BLT result
+      STR R0, .Pixel335 //top right
+      STR R0, .Pixel304
+      STR R0, .Pixel273
+      CMP R8, #3
+      BLT result
+      STR R0, .Pixel397 //bottom left
+      STR R0, .Pixel428
+      STR R0, .Pixel459
+      CMP R8, #4
+      BLT result
+      STR R0, .Pixel399 //bottom right
+      STR R0, .Pixel432
+      STR R0, .Pixel465
+      CMP R8, #5
+      BLT result
+      STR R0, .Pixel366 //middle
+      CMP R8, #5
+      BEQ lose
+win:
+      MOV R12, #winner
+      STR R12, .WriteString
+      HALT
+lose:
+      MOV R12, #loser
+      STR R12, .WriteString
+MSG:.ASCIZ "Please input a number \n" 
+resultMsg: .ASCIZ "\nWhatis the result of the 2 integers inputted?"
+input1: .ASCIZ "You have entered value"
+input2: .ASCIZ "\nYou have entered value"
+input3: .ASCIZ "\nYou have entered value"
+winner: .ASCIZ "\nWell done!"
+loser: .ASCIZ "\nYou Lost!"
